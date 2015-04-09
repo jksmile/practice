@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Test Page</title>
+        <style type="text/css">
+            * {font-family: Arial, Helvetica, sans-serif;font-size: 14px;}
+            #context{width:auto; height: 25px; border: 1px grey solid;margin-top: 20px; padding: 2px; text-align: left;  }
+            li{padding: 1px;list-style: none;float: left;margin-left: 10px;}
+            #result{ width: auto; height: auto; border: 1px grey dashed; }
+
+        </style>
+    </head>
+<body>
+
+    <div id="context">
+
+        <li>Wrapper_ID:<input name="wrapperId" type="text" id="wrapperIdInput"/> </li>
+
+        <li>SiteParam:<input name="siteParam" type="text" id="siteParamInput"/></li>
+
+        <li>Hotel_seq:<input name="hotelSeq" type="text" id="hotelSeqInput"/> </li>
+
+        <li><button id="submit" onclick="submitForm()">search</button> </li>
+
+
+    </div>
+
+
+    <div id="result">
+
+    </div>
+
+<script type="text/javascript">
+
+    function submitForm(){
+
+        var wrapperId = document.getElementById("wrapperIdInput").value.trim();
+        var siteParam = document.getElementById("siteParamInput").value.trim();
+        var hotelSeq  = document.getElementById("hotelSeqInput").value.trim();
+
+        if(wrapperId=="" || siteParam=="" || hotelSeq==""){
+            alert("The param must be input value!")
+            return false;
+        }else{
+            alert("/QueryData.jsp?wrapperId="+wrapperId+"&siteParam="+siteParam+"&hotelSeq="+hotelSeq);
+            ajaxFunction("/QueryData.jsp?wrapperId="+wrapperId+"&siteParam="+siteParam+"&hotelSeq="+hotelSeq);
+        }
+
+
+
+
+    }
+
+
+    function ajaxFunction( url ){
+        var xmlHttp;
+        try {
+            xmlHttp = new XMLHttpRequest();    // 实例化对象
+        }catch( e ){
+            // Internet Explorer
+            try{
+                xmlHttp = new ActiveXObject( "Msxml2.XMLHTTP" );
+            }catch ( e ){
+                try{
+                    xmlHttp = new ActiveXObject( "Microsoft.XMLHTTP" );
+                }catch( e ){
+                    alert("您的浏览器不支持AJAX！");
+                    return false;
+                }
+            }
+        }
+
+        xmlHttp.onreadystatechange = function()
+        {
+            if( xmlHttp.readyState == 4  && xmlHttp.status == 200 )
+            {
+                var resultObj = document.getElementById("result");
+                resultObj.innerHTML(xmlHttp.response);
+
+            }
+        }
+        xmlHttp.open( "GET", url, true );
+        xmlHttp.send( null );
+
+    }
+</script>
+</body>
+</html>
