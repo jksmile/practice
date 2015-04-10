@@ -14,11 +14,12 @@ package com.xjk.practice.designmodel.abstractfactory;
 interface AbstractFactory {
 
 
-		public FoodProduct getFoodInfo();
+		public GunProduct createGun();
 
 
-		public SportProduct getSportInfo();
+		public FighterPlanProduct createFighterPlan();
 
 
+		public WarshipProduct createWarship();
 
 }
