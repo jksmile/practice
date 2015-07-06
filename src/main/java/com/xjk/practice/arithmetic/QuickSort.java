@@ -1,6 +1,8 @@
 package com.xjk.practice.arithmetic;
 
-import com.xjk.practice.treetest.MaxValPath;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Intro:
@@ -12,26 +14,39 @@ import com.xjk.practice.treetest.MaxValPath;
 
 public class QuickSort {
 
-	private static int arrayLength = 100000;
+	private static int arrayLength = 6;
 
 	private static int[] arr = new int[arrayLength];
 
 	public static void main(String[] args) {
 
-		for (int i=0; i<arrayLength; i++){
+//		for (int i=0; i<arrayLength; i++){
+//
+//			arr[i] = (int) Math.ceil(Math.random()*arrayLength);
+//		}
+		arr[0] = 1;
+		arr[1] = 2;
+		arr[2] = 3;
+		arr[3] = 10;
+		arr[4] = 11;
+		arr[5] = 17;
+		System.out.println(Arrays.toString(arr));
 
-			arr[i] = (int) Math.ceil(Math.random()*arrayLength);
-		}
-
-		long startTimeA = System.currentTimeMillis();
 		quickSortMethodA(arr,0,arrayLength-1);
-		System.out.print("quickSortMethodA spend time: ");
-		System.out.println(System.currentTimeMillis()-startTimeA);
 
-		long startTimeB = System.currentTimeMillis();
-		quickSortMethodB(arr);
-		System.out.print("quickSortMethodB spend time: ");
-		System.out.println(System.currentTimeMillis() - startTimeB);
+		List<String> a = summaryRanges(arr);
+
+		System.out.println(a.toString());
+
+//		long startTimeA = System.currentTimeMillis();
+//		quickSortMethodA(arr,0,arrayLength-1);
+//		System.out.print("quickSortMethodA spend time: ");
+//		System.out.println(System.currentTimeMillis()-startTimeA);
+//
+//		long startTimeB = System.currentTimeMillis();
+//		quickSortMethodB(arr);
+//		System.out.print("quickSortMethodB spend time: ");
+//		System.out.println(System.currentTimeMillis() - startTimeB);
 
 
 		System.out.println("OK");
@@ -101,6 +116,33 @@ public class QuickSort {
 
 	}
 
+	public static  List<String> summaryRanges(int[] nums) {
 
+		List<String> result = new ArrayList<String>();
+
+
+		int len = nums.length;
+
+		int step = 1;
+
+		for(int i=0; i< len; ){
+
+			int temp = nums[i];
+			String info=nums[i]+"->";
+
+			while(++i< len && nums[i-1] +1 == nums[i]){
+
+
+			}
+
+			if(temp==nums[i-1]){
+				result.add(temp+"");
+			}else {
+				result.add(info + nums[i - 1]);
+			}
+		}
+
+		return  result;
+	}
 
 }

@@ -1,5 +1,7 @@
 package com.xjk.practice.treetest;
 
+import apple.laf.JRSUIUtils;
+
 /**
  * Intro:
  * Project: practice
@@ -56,28 +58,45 @@ public class TreeRecursion {
 
 		TreeNode treeNodeRoot = new TreeNode(1);
 
-		TreeNode treeNodeLeft1  = new TreeNode(2);
+		//
+		//           1
+		//          / \
+		//         2   3
+		//
+		TreeNode treeNodeLeft1 = new TreeNode(2);
 		treeNodeRoot.setLeftTree(treeNodeLeft1);
 		TreeNode treeNodeRight1 = new TreeNode(3);
 		treeNodeRoot.setRightTree(treeNodeRight1);
 
+
+		//
+		//           1
+		//          / \
+		//         2   3
+		//        / \
+		//       4   5
 		TreeNode treeNodeLeft11 = new TreeNode(4);
 		treeNodeLeft1.setLeftTree(treeNodeLeft11);
-		TreeNode treeNodeRight12 = new TreeNode(5);
-		treeNodeLeft1.setRightTree(treeNodeRight12);
+		TreeNode treeNodeLeft12 = new TreeNode(5);
+		treeNodeLeft1.setRightTree(treeNodeLeft12);
+
+		//
+		//           1
+		//          / \
+		//         2   3
+		//        /\   /\
+		//       4  5 6  7
+		TreeNode treeNodeRight11 = new TreeNode(6);
+		treeNodeRight1.setLeftTree(treeNodeRight11);
+		TreeNode treeNodeRight12 = new TreeNode(7);
+		treeNodeRight1.setRightTree(treeNodeRight12);
 
 
-		TreeNode treeNodeRightX = new TreeNode(100);
-		treeNodeLeft11.setRightTree(treeNodeRightX);
 
-		TreeNode treeNodeLeftY = new TreeNode(98);
-		treeNodeRightX.setLeftTree(treeNodeLeftY);
-		TreeNode treeNodeRightZ = new TreeNode(99);
-		treeNodeRightX.setRightTree(treeNodeRightZ);
-
-
-		//printTreeFirst(treeNodeRoot);
-		//printTreeMiddle(treeNodeRoot);
+		printTreeFirst(treeNodeRoot);
+		System.out.println();
+		printTreeMiddle(treeNodeRoot);
+		System.out.println();
 		printTreeLast(treeNodeRoot);
 
 	}
