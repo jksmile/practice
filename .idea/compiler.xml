@@ -25,6 +25,8 @@
         <module name="practice" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.7" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="practice" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
