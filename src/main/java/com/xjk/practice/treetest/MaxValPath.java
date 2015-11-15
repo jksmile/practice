@@ -1,7 +1,5 @@
 package com.xjk.practice.treetest;
 
-import com.xjk.practice.extendtest.C;
-
 import java.util.ArrayList;
 import java.util.Stack;
 import java.util.TreeMap;
@@ -128,6 +126,42 @@ public class MaxValPath {
 
 	}
 
+
+
+
+
+
+	static ArrayList<Integer> listVal= new ArrayList<Integer>();
+
+	static ArrayList<Stack> stackArr = new ArrayList<Stack>();
+
+	static Stack<Integer> tmpStack = new Stack<Integer>();
+
+	public static void readTree(TreeNode treeNodeRoot){
+
+		if(treeNodeRoot != null){
+
+			tmpStack.push(treeNodeRoot.getVal());
+
+			if(listVal.contains(treeNodeRoot.getVal())){
+
+				Stack<Stack> St = new Stack<Stack>();
+
+				St.push(tmpStack);
+
+				stackArr.add(St);
+
+			}
+
+			readTree(treeNodeRoot.getLeftTree());
+
+			readTree(treeNodeRoot.getRightTree());
+
+		}
+
+		tmpStack.pop();
+
+	}
 
 
 
