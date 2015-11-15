@@ -54,6 +54,23 @@ public class TreeRecursion {
 
 	}
 
+	public static void invertTree(TreeNode treeNode){
+
+		if(treeNode != null){
+
+			TreeNode tempLeftTree = treeNode.getLeftTree();
+
+			treeNode.setLeftTree(treeNode.getRightTree());
+
+			treeNode.setRightTree(tempLeftTree);
+
+			invertTree(treeNode.getLeftTree());
+
+			invertTree(treeNode.getRightTree());
+		}
+
+	}
+
 	public static void main(String[] args){
 
 		TreeNode treeNodeRoot = new TreeNode(1);
