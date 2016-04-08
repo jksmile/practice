@@ -96,6 +96,8 @@ public class QuickSort {
 
 
 
+
+
 	public static void quickSortMethodB(int arr[]){
 
 
