@@ -41,6 +41,12 @@ public class index {
 
 	public static void main(String[] args) {
 
+		System.out.println("OK");
+
+	}
+
+
+	public static void testHashMap(){
 		HashMap sourceData = hashMapTest();
 
 		Long startTimeA = System.currentTimeMillis();
@@ -53,10 +59,7 @@ public class index {
 		getHashValueB(sourceData);
 		System.out.println("Project B:"+(System.currentTimeMillis()-startTimeB));
 
-
 	}
-
-
 
 	public static HashMap hashMapTest(){
 

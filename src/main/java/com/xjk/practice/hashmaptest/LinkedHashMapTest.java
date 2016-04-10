@@ -1,7 +1,5 @@
 package com.xjk.practice.hashmaptest;
 
-import com.sun.tools.jdi.LinkedHashMap;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -16,34 +14,16 @@ import java.util.Map;
 
 public class LinkedHashMapTest {
 
-	private static LinkedHashMap linkedHashMap;
-
 	private static HashMap hashMap;
 
 	public static void main(String[] args) {
-		linkedHashMapTest();
+
 
 		hashMapTest();
 	}
 
 
 
-	public static void linkedHashMapTest(){
-
-		linkedHashMap = new LinkedHashMap();
-
-		linkedHashMap.put("x", "xjk");
-		linkedHashMap.put("z","zp");
-		linkedHashMap.put("d","dqk");
-
-		Iterator temp = linkedHashMap.entrySet().iterator();
-
-		while (temp.hasNext()){
-			Map.Entry el = (Map.Entry) temp.next();
-			System.out.println(el.getKey()+"------"+el.getValue());
-		}
-
-	}
 
 	public static void hashMapTest(){
 		hashMap = new HashMap();
