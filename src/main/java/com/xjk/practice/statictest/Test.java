@@ -1,5 +1,7 @@
 package com.xjk.practice.statictest;
 
+import java.math.BigDecimal;
+
 /**
  * Created by yongche on 15/8/17.
  */
@@ -10,10 +12,27 @@ public class Test extends Thread{
 
     public static void main(String[] args) {
 
+        BigDecimal test = new BigDecimal("7283");
 
-        new Test().start();
+        BigDecimal x = test.max(new BigDecimal("88888"));
 
-        testStaticMethod(false, 20);
+        if( test.max(new BigDecimal("88888")).equals(new BigDecimal("88888")) ){
+            System.out.println("XX");
+        }
+
+        System.out.println(test.longValue());
+
+        for(int i=1; i<5; i++){
+
+            test = test.add(new BigDecimal(i));
+        }
+
+        System.out.println(test.toString());
+
+//
+//        new Test().start();
+//
+//        testStaticMethod(false, 20);
 
     }
 
@@ -71,4 +90,11 @@ public class Test extends Thread{
     }
 
 
+}
+
+
+interface a{
+
+
+    BigDecimal M_BIG = new BigDecimal(100);
 }

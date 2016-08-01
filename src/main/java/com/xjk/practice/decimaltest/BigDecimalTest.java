@@ -1,6 +1,5 @@
 package com.xjk.practice.decimaltest;
 
-import java.lang.reflect.Type;
 import java.math.BigDecimal;
 
 /**
@@ -13,6 +12,14 @@ import java.math.BigDecimal;
 public class BigDecimalTest {
 
 	public static void main(String[] args) {
+
+
+				new BigDecimal("100");
+
+				BigDecimal x = BigDecimal.valueOf(1);
+
+
+
 				double d = 20014999;
 				long l = Double.doubleToLongBits(d);
 				System.out.println(Long.toBinaryString(l));
