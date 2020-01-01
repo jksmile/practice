@@ -9,19 +9,16 @@ public class Test {
 
     public static void main(String[] args) {
 
-        Bank b = new Bank(100.00);
+        LogCache logA = new LogCache("AAA");
 
-        for (int i = 0; i < 100; i++) {
+        Thread tha = new Thread(logA,"a");
 
-                Transfer t = new Transfer(b, i);
+        Thread thb = new Thread(logA,"b");
 
-                Thread a = new Thread(t);
+        tha.start();
 
-                 System.out.println("----"+i);
-                 a.start();
-                 System.out.println("------"+i);
+        thb.start();
 
-        }
 
     }
 

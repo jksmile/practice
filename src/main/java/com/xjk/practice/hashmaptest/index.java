@@ -16,9 +16,22 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class index {
 
+
+
+	public static void main(String[] args) {
+
+		if(true && false || false && true){
+			System.out.println("Xxx");
+		}
+	}
+
+
 	private static AtomicInteger idx = new AtomicInteger(0);
 
 	public static void hashsettest(){
+
+
+
 
 		Set set = new HashSet();
 
@@ -41,14 +54,5 @@ public class index {
 	}
 
 
-	public static void main(String[] args) {
-
-		hashsettest();
-
-		System.out.println(index.class.getName());
-
-		System.out.println(1%9);
-		System.out.println(2%1);
-	}
 
 }

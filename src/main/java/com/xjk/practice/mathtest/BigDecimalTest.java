@@ -11,7 +11,9 @@ public class BigDecimalTest {
 
     public static void main(String[] args) {
 
-        test();
+        System.out.println(-10 >> 1);
+
+        System.out.println(-10 >>> 1);
     }
 
 
